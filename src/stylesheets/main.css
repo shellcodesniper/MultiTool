@@ -1,0 +1,10 @@
+.centered {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+}
+
+.fullWidth {
+  height: 100%;
+}

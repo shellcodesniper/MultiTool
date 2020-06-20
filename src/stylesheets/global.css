@@ -9,6 +9,7 @@ body {
 
 html, body {
   height: 100%;
+  /* background-color: #ced4da !important; */
 }
 
 .divider {
@@ -33,4 +34,11 @@ html, body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100%;
+}
+.App {
+  height: 100%;
 }

@@ -4,3 +4,5 @@ const {
 
 // require('./api/bithumb');
 // ! ipc에서 읽어들이기
+
+require ("./api");

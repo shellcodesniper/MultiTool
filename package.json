@@ -1,13 +1,13 @@
 {
   "type": "module",
-  "name": "name",
+  "name": "nuevelleutil",
   "version": "0.0.1",
-  "productName": "Hit The Bot",
-  "description": "자동거래",
+  "productName": "NUEVELLE UTIL",
+  "description": "사움 등록 유틸",
   "copyright": "Coded By. shellcodesniper@gmail.com / 김도균 / shellcodesniper",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shellcodesniper/REPO_NAME.git"
+    "url": "https://github.com/shellcodesniper/Shop_Utillity.git"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "react-split-pane": "^0.1.91",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
     "socket.io": "^2.3.0",
@@ -75,13 +76,13 @@
     ]
   },
   "build": {
-    "appId": "com.kuuwange.hithebot",
-    "artifactName": "hithebot.${ext}",
+    "appId": "com.nuevelle.util",
+    "artifactName": "nuevelle_util.${ext}",
     "publish": [
       {
         "provider": "github",
         "owner": "shellcodesniper",
-        "repo": "REPO_NAME"
+        "repo": "Shop_Utillity"
       }
     ],
     "mac": {
