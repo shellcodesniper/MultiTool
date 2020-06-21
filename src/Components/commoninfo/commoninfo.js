@@ -13,14 +13,15 @@ import { Content } from "./children"
 
 const { ipcRenderer } = window;
 
-class Home extends React.Component {
+class CommonInfo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() { 
     return (
-      <Layout currentName="home">
+      <Layout currentName="commoninfo">
         <Container>
           <Content/>
         </Container>
@@ -30,4 +31,4 @@ class Home extends React.Component {
 }
 
 
-export default Home;
+export default CommonInfo;

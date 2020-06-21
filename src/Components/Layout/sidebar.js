@@ -32,6 +32,14 @@ function Leftsidebar(props) {
       </Menu.Item>
 
       <Menu.Item
+        name="commoninfo"
+        active={props.activeItem === "commoninfo"}
+        onClick={props.handleItemClick}
+      >
+        공통정보 등록
+      </Menu.Item>
+
+      <Menu.Item
         name="updates"
         active={props.activeItem === "updates"}
         onClick={props.handleItemClick}

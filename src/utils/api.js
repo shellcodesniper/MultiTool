@@ -3,19 +3,6 @@ const {
 } = window;
 
 const ApiUtil ={
-  getApiData: function () {
-    var connectKey= localStorage.getItem("connectKey");
-    var  secretKey= localStorage.getItem("secretKey");
-    connectKey = !connectKey ? "": connectKey
-    secretKey = !secretKey ? "" : secretKey
-
-    return {
-      connectKey:connectKey,
-      secretKey:secretKey
-    }
-  },
-  // ! api data 준비해줌, localStorage 에서 api key 를 받아온다.
-
   prepareApiData: function (params) {
     return {
       apiData: this.getApiData(),

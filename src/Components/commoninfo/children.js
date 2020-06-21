@@ -9,7 +9,7 @@ import {
 
 import ApiUtil from "utils/api"
 
-import {Content_Info} from './children_info'
+// import {Content_Info} from './children_info'
 
 import "stylesheets/home.css"
 
@@ -24,7 +24,7 @@ class Content extends React.Component {
   render () {
     return (
       <div>
-        <Content_Info />
+        AAA
       </div>
     )
   }

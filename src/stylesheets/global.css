@@ -42,3 +42,7 @@ code {
 .App {
   height: 100%;
 }
+
+.dimmerColoring {
+  background-color: #bbbbbb !important;
+}

@@ -21,8 +21,8 @@ class Layout extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.state.activeItem !== prevState.activeItem && this.state.activeItem !== this.props.currentName) {
-      var redirectUrl = '../' + this.state.activeItem
+    if(this.state.activeItem !== prevState.activeItem && this.state.activeItem !== this.props.currentName) {      
+      var redirectUrl = '/' + this.state.activeItem.replace('_','/')
       console.log(redirectUrl)
 
       this.setState({

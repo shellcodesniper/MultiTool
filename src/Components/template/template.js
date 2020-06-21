@@ -16,11 +16,12 @@ const { ipcRenderer } = window;
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() { 
     return (
-      <Layout currentName="home">
+      <Layout currentName="template">
         <Container>
           <Content/>
         </Container>

@@ -4,6 +4,9 @@ import {
   Checkbox,
   Form,
   Container,
+  Segment,
+  Dimmer,
+  Loader,
   Grid
 } from "semantic-ui-react";
 import {
@@ -24,7 +27,8 @@ class Main extends React.Component {
     this.state = {
       redirectUrl: '',
       username : localStorage.getItem("username"),
-      password : localStorage.getItem("password")
+      password : localStorage.getItem("password"),
+      loading: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +36,9 @@ class Main extends React.Component {
 
   componentDidMount() {
     ipcRenderer.on("response_crawler_login", function (event, data) {
+      this.setState(
+          { loading:false }
+        )
       if(data === "NOT_LOGGED_IN") {
         const options = {
           type: "question",
@@ -50,6 +57,9 @@ class Main extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.setState(
+      { loading:true }
+    )
 
     if (this.state.username !== "" && this.state.password !== "") {
       localStorage.setItem("username", this.state.username);
@@ -84,23 +94,31 @@ class Main extends React.Component {
         <Grid columns={2} verticalAlign='middle' centered className="centered fullWidth">
           <Grid.Row>
             <Grid.Column>
-              <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-                <Form.Field>
-                  <label>스토어팜 아이디</label>
-                  <input name="username" value={this.state.username} placeholder='스토어팜 아이디' />
-                </Form.Field>
-                <Form.Field>
-                  <label>스토어팜 비밀번호</label>
-                  <input name="password" value={this.state.password} placeholder='스토어팜 비밀번호' />
-                </Form.Field>
-                <Form.Field>
-                </Form.Field>
-                <Button type='submit'>Submit</Button>
-              </Form>
+              <Segment>
+                {this.state.loading &&
+                <Dimmer active className="dimmerColoring">
+                  <Loader size='massive'>로그인중</Loader>
+                </Dimmer>
+                }
+                <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
+                  <Form.Field>
+                    <label>스토어팜 아이디</label>
+                    <input name="username" value={this.state.username} placeholder='스토어팜 아이디' />
+                  </Form.Field>
+                  <Form.Field>
+                    <label>스토어팜 비밀번호</label>
+                    <input name="password" value={this.state.password} placeholder='스토어팜 비밀번호' />
+                  </Form.Field>
+                  <Form.Field>
+                  </Form.Field>
+                  <Button type='submit'>Submit</Button>
+                </Form>
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
+      
     );
   }
 }
