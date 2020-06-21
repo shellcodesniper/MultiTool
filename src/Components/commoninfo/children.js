@@ -11,6 +11,8 @@ import ApiUtil from "utils/api"
 
 // import {Content_Info} from './children_info'
 
+import {CommonForm} from './commonform'
+
 import "stylesheets/home.css"
 
 const {
@@ -24,7 +26,7 @@ class Content extends React.Component {
   render () {
     return (
       <div>
-        AAA
+        <CommonForm />
       </div>
     )
   }

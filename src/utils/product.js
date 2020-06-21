@@ -80,6 +80,8 @@ const Product_Structure = {
   }
 }
 const ProductUtil = {
-  
+  getProdutStructure: function () {
+    return Product_Structure;
+  }
 }
 export default ProductUtil;
