@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // BrowserRouter 사용시에 패키징 후 빈화면만 나오는 이슈 확인하여 변경함
 import Main from "components/main/main";
 import Home from "components/home/home";
 import Updater from "components/updater/updater.js";
-import Product_Register from "components/product/register.js"
+import ProductRegister from "components/product/register.js";
 import CommonInfo from "components/commoninfo/commoninfo.js"
 
 function NoMatch () {
@@ -49,7 +49,7 @@ export default function Routes () {
         </Route>
 
         <Route paht="/product/register">
-          < Product_Register />
+          < ProductRegister />
         </Route>
 
         <Route>

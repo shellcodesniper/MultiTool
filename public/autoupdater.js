@@ -40,12 +40,12 @@ module.exports = function (mainWindow) {
 
     if (isDev) {
       console.log("Dev Mode")
-      updateWindow.loadURL(`http://localhost:3000/update`)
+      updateWindow.loadURL(`http://localhost:3000/#/update`)
       // mainWindow.webContents.openDevTools();
     } else {
       console.log("Not Dev Mode")
       updateWindow.removeMenu();
-      updateWindow.loadURL(`file://${path.join(__dirname,'..//build/index.html')}update`)
+      updateWindow.loadURL(`file://${path.join(__dirname,'..//build/index.html')}#update`)
       // mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
     }
 
