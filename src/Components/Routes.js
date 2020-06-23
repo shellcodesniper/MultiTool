@@ -14,27 +14,49 @@ function NoMatch () {
     </div>
   )
 }
-class Routes extends React.Component {
-  componentDidUpdate () {
-    console.log("UPDATE!!")
-  }
-  render () {
-    return (
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/home" component={Home} />
-          <Route path="/commoninfo" component={CommonInfo} />
 
-          <Route paht="/product/register" component={Product_Register} />
-          <Route path="/update" component={Updater}/>
 
-          <Route component={NoMatch} />
-          
-        </Switch>
-      </Router>
-    )
+class DebugRouter extends Router {
+  constructor(props) {
+    super(props);
+    console.log('initial history is: ', JSON.stringify(this.history, null, 2))
+    this.history.listen((location, action) => {
+      console.log(
+        `The current URL is ${location.pathname}${location.search}${location.hash}`
+      )
+      console.log(`The last navigation action was ${action}`, JSON.stringify(this.history, null, 2));
+    });
   }
 }
 
-export default Routes;
+export default function Routes () {
+  return (
+    <DebugRouter>
+      <Switch>
+        <Route path="/" exact>
+          <Main />
+        </Route>
+
+        <Route path="/update">
+          <Updater />
+        </Route>
+
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/commoninfo">
+          < CommonInfo />
+        </Route>
+
+        <Route paht="/product/register">
+          < Product_Register />
+        </Route>
+
+        <Route>
+          NoMatch
+        </Route>
+        
+      </Switch>
+    </DebugRouter>
+  )
+};

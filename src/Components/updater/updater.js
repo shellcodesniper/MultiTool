@@ -49,7 +49,7 @@ class Updater extends React.Component {
         <Grid.Row>
           <Grid.Column>
             <h3>{parseFloat(this.state.percentage) === 100 ? "업데이트 완료! 확인 버튼을 눌러 창을 닫아주세요" : "업데이트 중..."}</h3>
-            <Progress indicating percent={parseFloat(this.state.percentage)} progress />
+            <Progress indicating percent={parseInt(this.state.percentage)} progress />
             <div className="col-2 mx-0 px-0 float-right mt-3">
             </div>
           </Grid.Column>
