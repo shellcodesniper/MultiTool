@@ -57,7 +57,7 @@ module.exports = function (mainWindow) {
   });
 
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (isDev) {
     //개발환경일경우 설정파일이 없어서 오류 index.js와 같은 폴더에 앱업데이트 설정을 넣어둬 해결
     autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
   }
