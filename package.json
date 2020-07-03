@@ -1,13 +1,13 @@
 {
   "type": "module",
-  "name": "nuevelleutil",
-  "version": "0.1.6",
-  "productName": "NUEVELLE UTIL",
-  "description": "사움 등록 유틸",
+  "name": "multitool",
+  "version": "0.2.0",
+  "productName": "MULTITOOL",
+  "description": "뭐든 다들어있는것",
   "copyright": "Coded By. shellcodesniper@gmail.com / 김도균 / shellcodesniper",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shellcodesniper/Shop_Utillity.git"
+    "url": "https://github.com/shellcodesniper/MultiTool.git"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "electron-debug": "^3.0.1",
     "electron-is-dev": "^1.2.0",
     "electron-json-storage": "^4.1.8",
-    "electron-store": "^5.1.1",
+    "electron-store": "^5.2.0",
     "electron-updater": "^4.0.4",
     "electron-winstaller": "^4.0.0",
     "react": "^16.13.1",
@@ -76,13 +76,13 @@
     ]
   },
   "build": {
-    "appId": "com.nuevelle.util",
-    "artifactName": "nuevelle_util.${ext}",
+    "appId": "com.kuuwang.multitool",
+    "artifactName": "multitool.${ext}",
     "publish": [
       {
         "provider": "github",
         "owner": "shellcodesniper",
-        "repo": "Shop_Utillity"
+        "repo": "MultiTool"
       }
     ],
     "mac": {

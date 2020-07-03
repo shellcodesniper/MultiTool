@@ -35,23 +35,24 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    ipcRenderer.on("response_crawler_login", function (event, data) {
+    ipcRenderer.on("response_user_login", function (event, data) {
+      console.log(data);
       this.setState(
           { loading:false }
         )
-      if(data === "NOT_LOGGED_IN") {
-        const options = {
-          type: "question",
-          buttons: ["확인"],
-          title: "에러!",
-          message: "로그인중 문제가 발생하였습니다.",
-          detail: "아이디 / 비밀번호를 다시 확인해보세요",
-        };
-        ipcRenderer.send("request_show_message_box", options);
-      }
-      else {
-        this.setState({redirectUrl: '/home'})
-      }
+      // if(data === "NOT_LOGGED_IN") {
+      //   const options = {
+      //     type: "question",
+      //     buttons: ["확인"],
+      //     title: "에러!",
+      //     message: "로그인중 문제가 발생하였습니다.",
+      //     detail: "아이디 / 비밀번호를 다시 확인해보세요",
+      //   };
+      //   ipcRenderer.send("request_show_message_box", options);
+      // }
+      // else {
+      //   this.setState({redirectUrl: '/home'})
+      // }
     }.bind(this));
   }
 
@@ -67,7 +68,7 @@ class Main extends React.Component {
     }
     
     let reqdata = {username:this.state.username, password:this.state.password}
-    ipcRenderer.send("request_crawler_login", reqdata);
+    ipcRenderer.send("request_user_login", reqdata);
     console.log(this.state.username, this.state.password);
   }
   handleChange(event) {
@@ -102,12 +103,12 @@ class Main extends React.Component {
                 }
                 <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                   <Form.Field>
-                    <label>스토어팜 아이디</label>
-                    <input name="username" value={this.state.username} placeholder='스토어팜 아이디' />
+                    <label>MULTITOOL 아이디</label>
+                    <input name="username" value={this.state.username} placeholder='MULTITOOL 아이디' />
                   </Form.Field>
                   <Form.Field>
-                    <label>스토어팜 비밀번호</label>
-                    <input name="password" value={this.state.password} placeholder='스토어팜 비밀번호' />
+                    <label>MULTITOOL 비밀번호</label>
+                    <input name="password" value={this.state.password} placeholder='MULTITOOL 비밀번호' />
                   </Form.Field>
                   <Form.Field>
                   </Form.Field>
