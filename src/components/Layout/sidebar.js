@@ -24,11 +24,11 @@ function Leftsidebar(props) {
       </Menu.Item>
 
       <Menu.Item
-        name="product_register"
-        active={props.activeItem === "product_register"}
+        name="user"
+        active={props.activeItem === "user"}
         onClick={props.handleItemClick}
       >
-        상품등록
+        회원관리
       </Menu.Item>
 
       <Menu.Item

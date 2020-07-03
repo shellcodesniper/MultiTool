@@ -9,6 +9,9 @@ module.exports = {
     const options = {
       uri: `${baseurl}${url}`,
       method: 'POST',
+      headers: {
+        'token': store.get('token'),
+      },
       body: data,
       json: true,
     };

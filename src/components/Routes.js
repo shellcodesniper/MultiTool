@@ -5,6 +5,7 @@ import Main from "components/main/main";
 import Updater from "components/updater/updater.js";
 import Home from "components/home/home.js";
 import SMS from "components/sms/sms.js"
+import UserManager from "components/user/user.js";
 
 function NoMatch () {
   return (
@@ -43,6 +44,9 @@ export default function Routes () {
         </Route>
         <Route path="/sms">
           <SMS />
+        </Route>
+        <Route path='/user'>
+          <UserManager />
         </Route>
         <Route>
           <NoMatch />

@@ -54,8 +54,10 @@ class Main extends React.Component {
       localStorage.setItem("username", this.state.username);
       localStorage.setItem("password", this.state.password);
     }
+    let reqdata;
+    if(this.state.username.indexOf('@') > -1) reqdata = {email:this.state.username, password:this.state.password}
+    else reqdata = {username:this.state.username, password:this.state.password};
     
-    let reqdata = {username:this.state.username, password:this.state.password}
     ipcRenderer.send("request_user_login", reqdata);
     console.log(this.state.username, this.state.password);
   }
