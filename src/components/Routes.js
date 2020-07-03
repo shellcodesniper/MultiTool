@@ -3,11 +3,13 @@ import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 // BrowserRouter 사용시에 패키징 후 빈화면만 나오는 이슈 확인하여 변경함
 import Main from "components/main/main";
 import Updater from "components/updater/updater.js";
+import Home from "components/home/home.js";
+import SMS from "components/sms/sms.js"
 
 function NoMatch () {
   return (
     <div>
-    MOMATCH
+    <Redirect to='/'/>
     </div>
   )
 }
@@ -36,9 +38,16 @@ export default function Routes () {
         <Route path="/update">
           <Updater />
         </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/sms">
+          <SMS />
+        </Route>
         <Route>
           <NoMatch />
         </Route>
+
         
       </Switch>
     </DebugRouter>

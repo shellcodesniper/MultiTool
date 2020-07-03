@@ -39,20 +39,8 @@ class Main extends React.Component {
       console.log(data);
       this.setState(
           { loading:false }
-        )
-      // if(data === "NOT_LOGGED_IN") {
-      //   const options = {
-      //     type: "question",
-      //     buttons: ["확인"],
-      //     title: "에러!",
-      //     message: "로그인중 문제가 발생하였습니다.",
-      //     detail: "아이디 / 비밀번호를 다시 확인해보세요",
-      //   };
-      //   ipcRenderer.send("request_show_message_box", options);
-      // }
-      // else {
-      //   this.setState({redirectUrl: '/home'})
-      // }
+      )
+      if (data.status === 200) this.setState({redirectUrl: '/home'});
     }.bind(this));
   }
 
