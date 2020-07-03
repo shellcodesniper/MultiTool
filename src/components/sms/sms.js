@@ -49,7 +49,7 @@ class SMS extends React.Component {
             <Form.Input fluid name='pn' label='메세지 전송할 번호' placeholder='010~~~~~~~~' />
             <Form.TextArea fluid name='content' label='메세지 내용' placeholder='메세지 전송용내용' />
             <Form.Checkbox label='메세지 내용이 정확한가요?' />
-            <Button type='submit' inverted color='facebook'>메세지 전송</Button>
+            <Button type='submit' color='facebook'>메세지 전송</Button>
           </Form>
         </Segment>
       </Layout>

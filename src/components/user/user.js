@@ -49,14 +49,14 @@ class UserManager extends React.Component {
     }
     return (
       <Layout currentName="user">
-        <Segment inverted>
-          <Form onSubmit={this.handleSubmit} inverted>
+        <Segment >
+          <Form onSubmit={this.handleSubmit}>
             <Form.Input fluid name='realname' label='이름' placeholder='관리자' />
             <Form.Field fluid type='email' name='email' label='이메일' placeholder='admin@kuuwang.com' control={Input} />
             <Form.Input fluid name='username' label='아이디' placeholder='username' />
             <Form.Input fluid name='password' label='비밀번호' placeholder='password' />
             <Form.Checkbox name='isBot' label='봇?' />
-            <Button type='submit' inverted color='facebook'>메세지 전송</Button>
+            <Button type='submit' color='facebook'>메세지 전송</Button>
           </Form>
         </Segment>
       </Layout>

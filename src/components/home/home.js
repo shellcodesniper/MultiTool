@@ -37,12 +37,12 @@ class Home extends React.Component {
           <Grid columns='equal'>
             <Grid.Row>
               <Grid.Column>
-                <Button onClick={() => {this.setState({redirectUrl: '/sms'})}} inverted size='massive' color='red'>
+                <Button onClick={() => {this.setState({redirectUrl: '/sms'})}} size='massive' color='red'>
                   SMS 전송 관리
                 </Button>
               </Grid.Column>
               <Grid.Column>
-                <Button onClick={() => {this.setState({redirectUrl: '/'})}} inverted size='massive' color='orange'>
+                <Button onClick={() => {this.setState({redirectUrl: '/'})}} size='massive' color='orange'>
                   텔레그램 봇 관리
                 </Button>
               </Grid.Column>
