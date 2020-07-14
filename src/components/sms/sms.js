@@ -34,7 +34,8 @@ class SMS extends React.Component {
     const content = event.target.content.value;
 
     const data = { pn, content};
-    ipcRenderer.send('');
+    console.log(data);
+    ipcRenderer.send('request_send_sms', data);
   }
 
   render() {

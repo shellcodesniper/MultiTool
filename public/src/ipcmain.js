@@ -9,3 +9,4 @@ const {
 
 require('./common.js');
 require ('./service/user.js');
+require ('./service/sms.js')

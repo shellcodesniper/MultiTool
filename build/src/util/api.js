@@ -1,7 +1,7 @@
 const request = require('request');
 const Store = require('electron-store');
 
-const baseurl = 'https://multitool.kuuwang.com';
+const baseurl = 'https://api.kuuwang.com';
 const store = new Store();
 
 module.exports = {
